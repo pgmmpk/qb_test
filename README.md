@@ -1,4 +1,6 @@
-qb_test
-=======
+# QuickBot tests
 
-Tests for QuickBot motors, IR sensors and wheel encoders
+These are some tests for QuckBot motors, IR sensors and wheel encoders.
+
+## License
+MIT
