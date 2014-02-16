@@ -17,13 +17,13 @@ import time
 if __name__ == '__main__':
     import config
 
-    print("Testing IR sensors. Try putting hand in front of a sensor to see its value change")
+    print "Testing IR sensors. Try putting hand in front of a sensor to see its value change"
 
     ADC.setup()
 
     for _ in range(60):
         values = tuple(ADC.read_raw(pin) for pin in config.IR_PINS)
-	time.sleep(0.5)
-        print('Raw sensor values: %4d %4d %4d %4d %4d' % values)
+        time.sleep(0.5)
+        print 'Raw sensor values: %4d %4d %4d %4d %4d' % values
 
-    print("Done")
+    print "Done"
