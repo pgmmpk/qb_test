@@ -18,6 +18,10 @@ These tests have to be run on the QuickBot side. These tests directly "talk" to 
 
     git clone https://github.com/pgmmpk/qb_test.git
 
+This will create a directory named `qb_test` with the test scripts. Go into this directory to run them.
+
+    cd qb_test/
+
 ## Running tests
 
 ### qt_test_motor
