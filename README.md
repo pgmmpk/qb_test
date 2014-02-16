@@ -4,8 +4,8 @@
 
 These are tests for QuickBot motors, IR sensors and wheel encoders.
 
-QuickBot is a simple wheeled robot, built as part of (Coursera "Control of Mobile Robots"
-class)[https://class.coursera.org/conrob-002]. It uses BeagleBone Black ARM-based mini-computer
+QuickBot is a simple wheeled robot, built as part of [Coursera "Control of Mobile Robots"
+class](https://class.coursera.org/conrob-002). It uses BeagleBone Black ARM-based mini-computer
 as its "brains".
 
 These tests have to be run on the QuickBot side. These tests directly "talk" to BeagleBone hardware.
