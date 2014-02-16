@@ -24,6 +24,6 @@ if __name__ == '__main__':
     for _ in range(60):
         values = tuple(ADC.read_raw(pin) for pin in config.IR_PINS)
 	time.sleep(0.5)
-        print('Raw encoder values: %4d %4d %4d %4d %4d' % values)
+        print('Raw sensor values: %4d %4d %4d %4d %4d' % values)
 
     print("Done")
