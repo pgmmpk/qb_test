@@ -16,7 +16,7 @@ These tests have to be run on the QuickBot side. These tests directly "talk" to 
 
 ### Clone qb_test git repository
 
-   git clone https://github.com/pgmmpk/qb_test.git
+    git clone https://github.com/pgmmpk/qb_test.git
 
 ## Running tests
 
@@ -26,11 +26,11 @@ Tests motor wiring by running each motor in each direction. This test runs for a
 and does the following:
 
 1. Runs left motor _forward_ for about 5 seconds and then stops
-2. Rund left motor _in reverse_ for about 5 seconds and then stops
+2. Runs left motor _in reverse_ for about 5 seconds and then stops
 3. Runs right motor _forward_ for about 5 seconds and then stops
 4. Runs right motor _in reverse_ for about 5 seconds and stops
 
-Run it like this:
+Start it like this:
 
     python qb_test_motor.py
 
@@ -40,7 +40,7 @@ Tests IR sensor wiring by printing IR readings for about 30 seconds. You can use
 in front of each IR sensor and see how readings change. Unobstructed reading is low (zero). If you place an obstacle in
 front of a sensor, reading should be high (approximately 300-800).
 
-Run it like this:
+Start it like this:
 
     python qb_test_ir.py
 
@@ -50,7 +50,7 @@ Tests wheel encoder wiring by reading values for about 30 seconds and printing t
 to see encoders generate periodic pattern. Note that encoder readings are very noisy, they may fluctuate even
 when wheels are not moved. However, rotating wheels should give you much larger amplitude of change.
 
-Run it like this:
+Start it like this:
 
     python qb_test_encoder.py
 
