@@ -17,13 +17,13 @@ def write_csv(filename, buf):
 
     with open(filename, 'wb') as f:
         for i in range(rows):
-            s = ', '.join(buf[i, :]) + '\n'
+            s = ', '.join(str(x) for x in buf[i, :]) + '\n'
             f.write(s.encode('utf-8'))
 
 if __name__ == '__main__':
     import config
 
-    NUM_SECS = 30 # 30 seconds of data
+    NUM_SECS = 3 # 30 seconds of data
     DT = 0.001    # 1 millisec apart
 
     size = int(NUM_SECS / DT)
@@ -36,10 +36,10 @@ if __name__ == '__main__':
     for i in range(size):
         values = tuple(ADC.read_raw(pin) for pin in config.ENC_PINS)
         #print('Raw encoder values: %4d  %4d' % values)
-        buffer[i, 0] = values[0]
-        buffer[i, 1] = values[1]
+        buf[i, 0] = values[0]
+        buf[i, 1] = values[1]
         time.sleep(DT)
 
     print "Done grabbing. Writing data out"
-    write_csv('encoder_grab.csv', buffer)
+    write_csv('encoder_grab.csv', buf)
     print "Done"
