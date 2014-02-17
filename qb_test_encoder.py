@@ -36,8 +36,7 @@ def display_ranges(val1, val2):
 
 if __name__ == '__main__':
     import config
-
-    print("Testing wheel encoders. Try manually rotating wheels to see how encoder values change")
+    print "Testing wheel encoders. Try manually rotating wheels to see how encoder values change"
 
     ADC.setup()
 
@@ -47,4 +46,4 @@ if __name__ == '__main__':
         display_ranges(*values)
         time.sleep(0.05)
 
-    print("Done")
+    print "Done"
