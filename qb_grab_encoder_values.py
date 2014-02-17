@@ -1,18 +1,23 @@
-'''
+"""
 Mike Kroutikov, (c) 2014
 
-Test QuickBot wheel encoder.
+Researching QuickBot wheel encoder.
 
 Run this code on the BeagleBone side.
 
-It will grab 30 seconds of raw wheel encoder data and write it to local file for analysis.
-'''
+It will grab few seconds seconds of raw wheel encoder readings and write the result as
+a CSV file. You can import it into a spreadsheet software like Excel and analyze it (e.g. plot it).
+"""
 import Adafruit_BBIO.ADC as ADC
 import time
 import numpy as np
 
 
 def write_csv(filename, buf):
+    """
+    Writes numpy array as a CSV file.
+    Numpy array is assumed to have 2 dimensions: (rows, cols)
+    """
     rows, cols = buf.shape
 
     with open(filename, 'wb') as f:
@@ -23,13 +28,14 @@ def write_csv(filename, buf):
 if __name__ == '__main__':
     import config
 
-    NUM_SECS = 3 # 30 seconds of data
-    DT = 0.001    # 1 millisec apart
+    NUM_SAMPLES = 3000 # 5-10 seconds of data
+    filename = 'data.csv'
 
-    size = int(NUM_SECS / DT)
+    size = NUM_SAMPLES
     buf = np.zeros((size, len(config.ENC_PINS)), dtype=np.int)
 
-    print "Grabbing wheel encoder readings. Try manually rotating wheels to see how encoder values change"
+    print "Grabbing wheel encoder readings and saving to", filename
+    print "Try manually rotating wheels to see the effect in the data"
 
     ADC.setup()
 
@@ -38,8 +44,8 @@ if __name__ == '__main__':
         #print('Raw encoder values: %4d  %4d' % values)
         buf[i, 0] = values[0]
         buf[i, 1] = values[1]
-        time.sleep(DT)
+        time.sleep(0.001)
 
-    print "Done grabbing. Writing data out"
-    write_csv('encoder_grab.csv', buf)
+    print "Done grabbing. Writing data out as ", filename
+    write_csv(filename, buf)
     print "Done"
