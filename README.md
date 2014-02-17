@@ -58,6 +58,17 @@ Start it like this:
 
     python qb_test_encoder.py
 
+### qt_grab_encoder_values
+
+This is an optional (research) tool. It reads encoder values and stores them in a file for later analysis.
+Data is stored in standard CSV format. Upload it to the host computer and analyze with standard
+graphical tools (e.g. matplotlib or Excel).
+
+Start it like this:
+
+    python qb_grab_encoder_values.py
+
+Result is stored in file named `data.csv`
 
 ## License
 MIT
